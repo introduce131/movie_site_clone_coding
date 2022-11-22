@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/movie_site_clone_coding/static/js/main.5a0caed4.js",
+    "main.js": "/movie_site_clone_coding/static/js/main.afb282c3.js",
     "index.html": "/movie_site_clone_coding/index.html",
-    "main.5a0caed4.js.map": "/movie_site_clone_coding/static/js/main.5a0caed4.js.map"
+    "main.afb282c3.js.map": "/movie_site_clone_coding/static/js/main.afb282c3.js.map"
   },
   "entrypoints": [
-    "static/js/main.5a0caed4.js"
+    "static/js/main.afb282c3.js"
   ]
 }
