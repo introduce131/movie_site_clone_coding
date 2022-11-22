@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import styles from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -9,7 +10,6 @@ function Home() {
 
   async function getMovies() {
     const json = await (await fetch(MOVIE_URL)).json();
-
     setMovie(json.data.movies);
     setLoading(false); //Loading화면 false
   }
@@ -19,23 +19,23 @@ function Home() {
     getMovies();
   }, []);
 
-  console.log(movie);
-
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        movie.map((item) => (
-          <Movie
-            key={item.id} //key는 React에서만, map안에서 컴포넌트들을 render할때 사용하는거다.
-            id={item.id}
-            medium_cover_image={item.medium_cover_image}
-            title={item.title}
-            summary={item.summary}
-            genres={item.genres}
-          />
-        ))
+        <div className={styles.movies}>
+          {movie.map((item) => (
+            <Movie
+              key={item.id} //key는 React에서만, map안에서 컴포넌트들을 render할때 사용하는거다.
+              id={item.id}
+              medium_cover_image={item.medium_cover_image}
+              title={item.title}
+              summary={item.summary}
+              genres={item.genres}
+            />
+          ))}
+        </div>
       )}
     </div>
   );
